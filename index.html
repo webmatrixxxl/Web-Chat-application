@@ -1,30 +1,144 @@
-<!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+﻿<!DOCTYPE html>
+<!--[if IE 8]> 				
+     <html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Foundation 4</title>
-
-
+    <title>Web Chat application</title>
+    <link href="css/presentation.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/foundation.css">
-
-
     <script src="js/vendor/custom.modernizr.js"></script>
-
+    <script src="js/script.js"></script>
+    <link href="css/iPhoneStyle.css" rel="stylesheet" />
 </head>
 <body>
-
-    <div class="row">
-        <div class="large-12 columns">
-            <h2>Welcome to Foundation</h2>
-            <p>This is version 4.3.1.</p>
-            <hr />
+    <header>
+        <div class="row">
+            <div class="twelve columns">
+                <a href="#sidebar" id="sidebarButton" class="sidebar-button show-for-small">
+                    <img src="images/offcanvas/menu-wht.png"><h4>Foundation</h4>
+                </a>
+                <h1 class="hide-for-small">Web Chat application</h1>
+                <h4 class="hide-for-small">Build for the future.</h4>
+            </div>
         </div>
-    </div>
+    </header>
+    <section class="example" id="mainContent">
+
+        <div class="row">
+            <div class="eight columns">
+                <h3>Ye Olde Game Reviews</h3>
+            </div>
+            <div class="four columns hide-for-small">
+                <p class="right">
+                    <a href="#">Login</a> <a class="small blue nice radius button" href="#">Sign Up</a>
+                </p>
+            </div>
+            <div class="four columns show-for-small">
+                <p>
+                    <a href="#">Login</a> <a class="" href="#">Sign Up</a>
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <hr>
+        </div>
+
+        <div class="row">
+
+            <div class="six columns">
+                <h4>Contacts</h4>
+                <div class="row">
+                    <div class="two phone-one columns">
+                        <a href="#">
+                            <img src="http://placehold.it/80x100"></a>
+                    </div>
+                    <div class="ten phone-three columns">
+                        <h5 class="right">85</h5>
+                        <h4><a href="#">Pe6o</a></h4>
+                        <p>I'm in good mood :)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="two phone-one columns">
+                        <a href="#">
+                            <img src="http://placehold.it/80x100"></a>
+                    </div>
+                    <div class="ten phone-three columns">
+                        <h5 class="right">52</h5>
+                        <h4><a href="#">Pong Hong</a></h4>
+                        <p>Call me...</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="two phone-one columns">
+                        <a href="#">
+                            <img src="http://placehold.it/80x100"></a>
+                    </div>
+                    <div class="ten phone-three columns">
+                        <h5 class="right">35</h5>
+                        <h4><a href="#">Theodore Roosevelt</a></h4>
+                        <p>Cry my a river!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="six columns">
+                <!--<div class="row">
+                    <div class="phone-three columns">
+                        <p>
+                            <strong><a href="#">Jake Sully</a> said:</strong><br>
+                            Has anyone seen my wheelchair? This isn't funny guys.
+                        </p>
+                    </div>
+                </div>-->
+                <div class="row">
+
+
+                    <div id="iPhoneBro" class="iPhone gen">
+                        <div class="title">
+                            <input type="submit" class="back button" value="Messages">
+                            <span class="contact_name button">(614) MEME-BRO</span>
+                            <input type="submit" class="edit button" value="Edit">
+                        </div>
+                        <div id="conversation" class="conversation ">
+                            <div class="clear"></div>
+                            <div class="time" style="">
+                            </div>
+                            <div class="text sent" style="">
+                                <div class="reflect"></div>
+                                <p>
+                                    <strong><a href="#">Me</a> said:</strong>
+                                    Not sure if trolling, or just stupid #fry
+                                    
+                                </p>
+                            </div>
+                            <div class="text receive" style="">
+                                <div class="reflect"></div>
+                                <p>
+                                    <strong><a href="#" id="sender">Pe6o</a> said:</strong>
+                                    Stay cool man :P
+                                    <br />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <input id="imessage" type="text" name="imessage" value="" placeholder="Text Message"><input id="send_btn" type="submit" value="Send" onclick="sendSMS();" class="disabled"><input id="phone" type="hidden" name="number" value="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
 
     <div class="row">
         <div class="large-8 columns">

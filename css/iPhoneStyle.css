@@ -1,0 +1,144 @@
+﻿.iPhone .text {
+    color: #000000;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+    opacity: 1;
+    max-width: 180px;
+    width: auto;
+    text-align: left;
+    height: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+    .iPhone .text .reflect {
+        z-index: 10;
+        width: 100%;
+        height: 12px;
+        -moz-border-radius: 12px;
+        -webkit-border-radius: 12px;
+        border-radius: 12px;
+        margin-right: auto;
+        margin-left: auto;
+        opacity: 1;
+        background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.76) 100%) rgba(255, 255, 255, 0);
+        background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.25)), to(rgba(255, 255, 255, 0.76))) rgba(255, 255, 255, 0);
+        clear: both;
+        float: right;
+    }
+
+    .iPhone .text p {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 16px;
+        float: left;
+        max-width: 180px;
+        position: relative;
+        top: -7px;
+    }
+
+    .iPhone .text.sent {
+        float: right;
+        background: -moz-linear-gradient(90deg, #b6e74d 0%, #8fd13e 25.6%, #8acf43 79.9%, #4ab947 100%) #8fd13e;
+        background: -webkit-gradient(linear, left bottom, left top, from(#b6e74d), color-stop(0.256, #8fd13e), color-stop(0.799, #8acf43), to(#4ab947)) #8fd13e;
+        margin-left: 140px;
+    }
+
+    .iPhone .text.receive {
+        float: left;
+        word-wrap: break-word;
+        background-image: -webkit-gradient(linear, left bottom, left top, from(#e1e1e1), to(#e0e0e0));
+        background-image: -moz-linear-gradient(90deg, #e1e1e1 0%, #e0e0e0 100%);
+        margin-right: 116px;
+    }
+
+
+.iPhone .time {
+    margin: 0 auto;
+    float: left;
+    width: 100%;
+}
+
+    .iPhone .time p {
+        margin-top: 0;
+        text-align: center;
+        font-size: 12px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.96);
+        color: #7c899a;
+    }
+
+.iPhone .text img {
+    max-width: 180px;
+}
+
+.iPhone a {
+    color: #0171f2;
+    text-decoration: underline;
+}
+
+.iPhone div.title {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #000000;
+    padding: 7px 0;
+    height: 50px;
+    margin: 0;
+    overflow: visible;
+    background: -moz-linear-gradient(90deg, rgb(109, 131, 161) 0%, rgb(126, 147, 175) 47.6%, rgb(140, 158, 181) 50.3%, rgb(180, 191, 206) 100%) #6e84a2;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgb(109, 131, 161)), color-stop(0.476, rgb(126, 147, 175)), color-stop(0.503, rgb(140, 158, 181)), to(rgb(180, 191, 206))) #6e84a2;
+    color: #ffffff;
+}
+
+.iPhone .title .contact_name {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.53);
+    font-size: 17px;
+    padding-right: 7px;
+    padding-left: 7px;
+    margin-top: 13px;
+    top: 4px;
+    position: relative;
+}
+
+.iPhone div.title input[type=submit] {
+    padding: 0 10px;
+    color: #ffffff;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
+    font: 12px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    height: 29px;
+    -moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.28), 0 1px 0 rgba(255, 255, 255, 0.12);
+    -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.28), 0 1px 0 rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.28), 0 1px 0 rgba(255, 255, 255, 0.12);
+    border-top-style: none;
+    color: #ffffff;
+    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.13) 46.9%, rgba(255, 255, 255, 0.22) 51.9%, rgba(255, 255, 255, 0.34) 100%) #486a98;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), color-stop(0.469, rgba(255, 255, 255, 0.13)), color-stop(0.519, rgba(255, 255, 255, 0.22)), to(rgba(255, 255, 255, 0.34))) #486a98;
+    border: 1px solid rgba(0, 0, 0, 0.39);
+    min-width: 72px;
+}
+
+    .iPhone div.title input[type=submit]:hover {
+        background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.13) 46.9%, rgba(255, 255, 255, 0.22) 51.9%, rgba(255, 255, 255, 0.34) 100%) #3c587f;
+        background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), color-stop(0.469, rgba(255, 255, 255, 0.13)), color-stop(0.519, rgba(255, 255, 255, 0.22)), to(rgba(255, 255, 255, 0.34))) #3c587f;
+    }
+
+    .iPhone div.title input[type=submit]:active {
+        color: #bebebe;
+    }
+
+.conversation {
+    display: inline-block;
+}
