@@ -16,27 +16,30 @@ $(document).ready(function () {
     // Handles all the messages coming in from pubnub.subscribe.
     function handleMessage(message) {
         var messageEl = $("<li class='text receive'>"
-                          + "<a class='username' href='#'>" + message.username + ": </a>"
+                          + "<div class='reflect'></div><p><strong>"
+                          + "<a class='username' href='#'>" + message.username + "</a> said: "
+                          + "</strong>"
                           + message.text
-                          + "</li>");
+                          + "</p></li>");
         messageList.append(messageEl);
 
-
         // Scroll to bottom of page
-        $("html, body").animate({ scrollTop: $(document).height() - $(window).height() }, 'slow');
+        $("html, body, #iPhoneBro").animate({ scrollTop: $(document).height() - $(window).height() }, 'slow');
+        $("#iPhoneBro").animate({ scrollTop: $("#iPhoneBro").height() -300 }, 'slow');
     };
 
     // Prints my messages 
     function printMyMessage(message) {
         var messageEl = $("<li class='text sent'>"
-                          + "<a class='username' href='#'>" + $("#sender_username").text() + ": </a>"
+                          + "<div class='reflect'></div><p><strong>"
+                          + "<a class='username' href='#'>" + $("#sender_username").text() + "</a> said: "
+                          + "</strong>"
                           + message
-                          + "</li>");
+                          + "</p></li>");
         messageList.append(messageEl);
 
-
         // Scroll to bottom of page
-        $("html, body").animate({ scrollTop: $(document).height() - $(window).height() }, 'slow');
+        $("#iPhoneBro").animate({ scrollTop: $("#iPhoneBro").height() - 300 }, 'slow');
     };
 
     // Compose and send a message when the user clicks send message button.
@@ -54,7 +57,6 @@ $(document).ready(function () {
 
             printMyMessage(message);
             messageContent.val("");
-
         }
     });
 
