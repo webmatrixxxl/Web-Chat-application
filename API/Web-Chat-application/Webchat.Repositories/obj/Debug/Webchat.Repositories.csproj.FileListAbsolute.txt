@@ -1,0 +1,12 @@
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\bin\Debug\Webchat.Repositories.dll.config
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\bin\Debug\Webchat.Repositories.dll
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\bin\Debug\Webchat.Repositories.pdb
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\bin\Debug\Webchat.Data.dll
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\bin\Debug\Webchat.Models.dll
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\bin\Debug\Webchat.Data.pdb
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\bin\Debug\Webchat.Models.pdb
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\bin\Debug\EntityFramework.xml
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\obj\Debug\Webchat.Repositories.csprojResolveAssemblyReference.cache
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\obj\Debug\Webchat.Repositories.dll
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Repositories\obj\Debug\Webchat.Repositories.pdb

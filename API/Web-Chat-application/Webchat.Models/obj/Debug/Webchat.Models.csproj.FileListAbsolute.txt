@@ -1,0 +1,4 @@
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Models\bin\Debug\Webchat.Models.dll
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Models\bin\Debug\Webchat.Models.pdb
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Models\obj\Debug\Webchat.Models.dll
+C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Models\obj\Debug\Webchat.Models.pdb
