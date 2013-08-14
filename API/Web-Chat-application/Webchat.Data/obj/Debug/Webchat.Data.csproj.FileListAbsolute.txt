@@ -8,3 +8,13 @@ C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Da
 C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Data\obj\Debug\Webchat.Data.csprojResolveAssemblyReference.cache
 C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Data\obj\Debug\Webchat.Data.dll
 C:\Users\V\Documents\GitHub\Web-Chat-application\Web-Chat-application\Webchat.Data\obj\Debug\Webchat.Data.pdb
+C:\Users\V\Documents\GitHub\Web-Chat-application\API\Web-Chat-application\Webchat.Data\bin\Debug\Webchat.Data.dll.config
+C:\Users\V\Documents\GitHub\Web-Chat-application\API\Web-Chat-application\Webchat.Data\bin\Debug\Webchat.Data.dll
+C:\Users\V\Documents\GitHub\Web-Chat-application\API\Web-Chat-application\Webchat.Data\bin\Debug\Webchat.Data.pdb
+C:\Users\V\Documents\GitHub\Web-Chat-application\API\Web-Chat-application\Webchat.Data\bin\Debug\EntityFramework.dll
+C:\Users\V\Documents\GitHub\Web-Chat-application\API\Web-Chat-application\Webchat.Data\bin\Debug\Webchat.Models.dll
+C:\Users\V\Documents\GitHub\Web-Chat-application\API\Web-Chat-application\Webchat.Data\bin\Debug\Webchat.Models.pdb
+C:\Users\V\Documents\GitHub\Web-Chat-application\API\Web-Chat-application\Webchat.Data\bin\Debug\EntityFramework.xml
+C:\Users\V\Documents\GitHub\Web-Chat-application\API\Web-Chat-application\Webchat.Data\obj\Debug\Webchat.Data.csprojResolveAssemblyReference.cache
+C:\Users\V\Documents\GitHub\Web-Chat-application\API\Web-Chat-application\Webchat.Data\obj\Debug\Webchat.Data.dll
+C:\Users\V\Documents\GitHub\Web-Chat-application\API\Web-Chat-application\Webchat.Data\obj\Debug\Webchat.Data.pdb
