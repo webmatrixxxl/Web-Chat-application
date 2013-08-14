@@ -25,7 +25,8 @@ $(document).ready(function () {
 
         // Scroll to bottom of page
         $("html, body, #iPhoneBro").animate({ scrollTop: $(document).height() - $(window).height() }, 'slow');
-        $("#iPhoneBro").animate({ scrollTop: $("#iPhoneBro").height() -300 }, 'slow');
+        var scroller= document.getElementById("iPhoneBro")
+        scroller.scrollTop= scroller.scrollHeight;
     };
 
     // Prints my messages 
@@ -39,7 +40,8 @@ $(document).ready(function () {
         messageList.append(messageEl);
 
         // Scroll to bottom of page
-        $("#iPhoneBro").animate({ scrollTop: $("#iPhoneBro").height() - 300 }, 'slow');
+        var scroller = document.getElementById("iPhoneBro")
+        scroller.scrollTop = scroller.scrollHeight;
     };
 
     // Compose and send a message when the user clicks send message button.
