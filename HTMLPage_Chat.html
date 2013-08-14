@@ -5,15 +5,14 @@
         <meta charset="utf-8" />
         <title></title>
         <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-        <script src="http://cdn.pubnub.com/pubnub-3.4.4.js"></script>
+        <script src="http://cdn.pubnub.com/pubnub-3.5.3.min.js"></script>
 
     </head>
     <body>
        
+
         <div id="recever_username">pesho</div>
         <div id="sender_username">dichov</div>
-        <div data-role="page" id="chatPage" data-theme="c" class="type-interior">
 
             <div data-role="content">
                 <div data-role="header" data-position="fixed" data-tap-toggle="false">
@@ -21,8 +20,8 @@
                 </div>
  
                 <div data-role="content">
-                    <ul data-role="listview" id="messageList">
-                        <!-- <li><span class="username">User123:</span>This is my message.</li> -->
+                    <ul data-role="listview" id="conversation" class="conversation ">
+                      
                     </ul>
                 </div>
 
@@ -37,8 +36,6 @@
                 </div>
             </div>
 
-        </div>
-
         <script>
             $(document).ready(function () {
 
@@ -51,17 +48,30 @@
                 // Grab references for all of our elements.
                 var messageContent = $('#messageContent'),
                 sendMessageButton = $('#sendMessageButton'),
-                messageList = $('#messageList');
+                messageList = $('#conversation');
  
                 // Handles all the messages coming in from pubnub.subscribe.
                 function handleMessage(message) {
-                    var messageEl = $("<li class='message'>"
-                                      + "<span class='username'>" + message.username + ": </span>"
+                    var messageEl = $("<li class='text receive'>"
+                                      + "<a class='username' href='#'>" + message.username + ": </a>"
                                       + message.text
                                       + "</li>");
                     messageList.append(messageEl);
                     messageList.listview('refresh');
  
+                    // Scroll to bottom of page
+                    $("html, body").animate({ scrollTop: $(document).height() - $(window).height() }, 'slow');
+                };
+
+                // Prints my messages 
+                function printMyMessage(message) {
+                    var messageEl = $("<li class='text sent'>"
+                                      + "<a class='username' href='#'>" + $("#sender_username").text() + ": </a>"
+                                      + message
+                                      + "</li>");
+                    messageList.append(messageEl);
+                    messageList.listview('refresh');
+
                     // Scroll to bottom of page
                     $("html, body").animate({ scrollTop: $(document).height() - $(window).height() }, 'slow');
                 };
@@ -79,7 +89,9 @@
                             }
                         });
  
+                        printMyMessage(message);
                         messageContent.val("");
+                      
                     }
                 });
  
