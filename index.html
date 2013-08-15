@@ -24,7 +24,7 @@
     <script src="js/script.js"></script>
 
     <script src="http://cdn.pubnub.com/pubnub-3.5.3.min.js"></script>
-<!--    <script>
+    <script>
         $(document).ready(function () {
             $("footer").click(function () {
                 $("section").slideDown(1000);
@@ -32,7 +32,7 @@
 
             });
         });
-    </script>-->
+    </script>
 
 
     <style>
@@ -163,7 +163,9 @@
         <div class="row">
 
             <div class="six columns" id="contacts">
-                <h4>My Contacts</h4>
+                <h4>My Contacts
+                    <a class="right" href="#">add +</a>
+                </h4>
                 <div class="row">
                     <div class="two phone-one columns">
                         <a href="#">
@@ -172,7 +174,7 @@
                     <div class="ten phone-three columns">
                         <h5 class="right">85</h5>
                         <h4><a href="#">Pe6o</a></h4>
-                        <h6 class="right"><a href="#"><span>Add to chat</span> +</a></h6>
+                        <h6 class="right"><a id="User1" href="#"><span>Chat with</span> +</a></h6>
                         <p>I'm in good mood :)</p>
                     </div>
                 </div>
@@ -211,11 +213,9 @@
                         </p>
                     </div>
                 </div>-->
-                <div class="title">
-                    <input type="submit" class="back button" value="Messages">
-                    <span class="contact_name button">(614) MEME-BRO</span>
-                    <input type="submit" class="edit button" value="Edit">
-                </div>
+               
+                <label for="history" style="display:inline">History</label> <input id="showHistory" type="checkbox" name="history" value="sdas" />
+                <h4 class="right">Messages</h4>
                 <div id="iPhoneBro" class="iPhone gen">
 
                     <ul data-role="listview" id="conversation" class="conversation ">
@@ -278,12 +278,8 @@
                 <label for="email">Email</label>
                 <input type="email" placeholder="Email" name="email">
                 <label for="img">Repeate Password</label>
-                <input class="button" type="file" name="img">
-
-
-                <a href="#" class=" button two small right">Signe in</a>
-
-                <input class="button two small right" type="submit" value="LOG IN">
+                <input type="file" name="img">
+                <input class="button two small right" type="submit" value="Register">
             </form>
         </div>
     </footer>

@@ -72,6 +72,7 @@
     margin: 0 auto;
     float: left;
     width: 100%;
+    list-style:none;
 }
 
     .iPhone .time p {

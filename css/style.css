@@ -33,6 +33,7 @@
 #iPhoneBro, #contacts {
     max-height: 468px;
     overflow: auto;
+    display:inline-table;
 }
 
 footer {
