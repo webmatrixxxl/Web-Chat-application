@@ -19,7 +19,8 @@ $(document).ready(function () {
     var addChanel = $("#addChanel"); // to do: add element with id="addChanel"
     var removeChanel = $("#removeChanel"); // to do: add element with id="removeChanel"
     var closeAll = $("#closeAll"); // to do: add element with id="closeAll"
-    var changeChatMate = $(".chatMate"); // to do: add element with class="chatMate"
+    var addChatMate = $(".chatMate"); // to do: add element with class="chatMate"
+    var changeChatMate = $("#contacts .row");
     var isHistoryEnabled = false;
 
     showHistoryBtn.click(function (event) {
@@ -38,7 +39,6 @@ $(document).ready(function () {
             backfill: isHistoryEnabled,
             channel: chanelsArr,
             message: handleMessage,
-
         });
 
         return this;
@@ -72,6 +72,26 @@ $(document).ready(function () {
         chanelsArr = [];
     });
 
+   
+    addChatMate.click(function (event) {
+        pubnub.unsubscribe({
+            channel: chanelsArr
+        });
+        
+        var newUser = event.currentTarget.id.substring(2);
+        //console.log(newUser);
+        $("#receiver_username").text(newUser);
+        receiverUser = newUser;
+        chanelsArr = [currentUser, receiverUser];
+        messageList.html('');
+        pubnub.subscribe({
+            backfill: isHistoryEnabled,
+            channel: chanelsArr,
+            message: handleMessage,
+
+        });
+    });
+
 
     changeChatMate.click(function (event) {
         pubnub.unsubscribe({
@@ -79,6 +99,8 @@ $(document).ready(function () {
         });
 
         var newUser = event.currentTarget.id;
+        console.log(newUser);
+
         $("#receiver_username").text(newUser);
         receiverUser = newUser;
         chanelsArr = [currentUser, receiverUser];
