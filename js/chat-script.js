@@ -1,6 +1,5 @@
 ﻿
 $(document).ready(function () {
-
     // Initialize the PubNub API connection.
     var pubnub = PUBNUB.init({
         publish_key: 'pub-c-a54c6b0d-ee2a-4161-a103-f781d15e590f',
@@ -13,33 +12,96 @@ $(document).ready(function () {
     sendMessageButton = $('#sendMessageButton'),
     messageList = $('#conversation');
 
+    var currentUser = $("#sender_username").text();
+    var receverUser = $("#recever_username").text();
+    var chanelsArr = [currentUser, receverUser];
+    var showHistoryBtn = $("#showHistory"); // to do: add element with id="showHistory"
+    var addChanel = $("#addChanel"); // to do: add element with id="addChanel"
+    var removeChanel = $("#removeChanel"); // to do: add element with id="removeChanel"
+    var closeAll = $("#closeAll"); // to do: add element with id="closeAll"
+    var changeChatMate = $("#changeChatMate"); // to do: add element with id="changeChatMate"
+    var isHistoryEnabled = false;
+
+    showHistoryBtn.click(function () {
+        if (showHistoryBtn.text() === "Show History") {
+            isHistoryEnabled = true;
+        }
+        else {
+            isHistoryEnabled = false;
+        }
+
+        return this;
+    });
+
+    addChanel.click(function (newChanel) {
+       var newChanel = a
+        if (chanelsArr.indexOf(newChanel) >= 0) {
+            chanelsArr.push(newChanel)
+        }
+        return this;
+    });
+
+    removeChanel.click(function (chanel) {
+        var index = chanelsArr.indexOf(chanel);
+        if (index >= 0) {
+            chanelsArr[index] = chanelsArr[chanelsArr.length-1];
+            chanelsArr.pop();
+
+            pubnub.unsubscribe({
+                channel: chanel 
+            });
+        }
+        return this;
+    });
+
+    closeAll.click(function () {
+        pubnub.unsubscribe({
+            channel: chanelsArr
+        });
+        chanelsArr = [];
+    });
+
+    changeChatMate.click(function (newUser) {
+        pubnub.unsubscribe({
+            channel: chanelsArr
+        });
+        $("#recever_username").text(newUser);
+        receverUser = newUser;
+        chanelsArr = [currentUser, receverUser];
+
+        pubnub.subscribe({
+            backfill: isHistoryEnabled,
+            channel: chanelsArr,
+            message: handleMessage,
+
+        });
+    });
+
     // Handles all the messages coming in from pubnub.subscribe.
     function handleMessage(message) {
-        var messageEl = $("<li class='text receive'>"
+        
+        var messageEl = '';
+        if (message.username === currentUser) {
+            messageEl = $("<li class='text sent'>"
                           + "<div class='reflect'></div><p><strong>"
                           + "<a class='username' href='#'>" + message.username + "</a> said: "
                           + "</strong>"
                           + message.text
                           + "</p></li>");
+        }
+        else {
+            messageEl = $("<li class='text receive'>"
+                          + "<div class='reflect'></div><p><strong>"
+                          + "<a class='username' href='#'>" + message.username + "</a> said: "
+                          + "</strong>"
+                          + message.text
+                          + "</p></li>");
+        }
+
         messageList.append(messageEl);
 
         // Scroll to bottom of page
         $("html, body, #iPhoneBro").animate({ scrollTop: $(document).height() - $(window).height() }, 'slow');
-        var scroller= document.getElementById("iPhoneBro")
-        scroller.scrollTop= scroller.scrollHeight;
-    };
-
-    // Prints my messages 
-    function printMyMessage(message) {
-        var messageEl = $("<li class='text sent'>"
-                          + "<div class='reflect'></div><p><strong>"
-                          + "<a class='username' href='#'>" + $("#sender_username").text() + "</a> said: "
-                          + "</strong>"
-                          + message
-                          + "</p></li>");
-        messageList.append(messageEl);
-
-        // Scroll to bottom of page
         var scroller = document.getElementById("iPhoneBro")
         scroller.scrollTop = scroller.scrollHeight;
     };
@@ -50,9 +112,9 @@ $(document).ready(function () {
 
         if (message != '') {
             pubnub.publish({
-                channel: $("#recever_username").text(),
+                channel: receverUser,
                 message: {
-                    username: $("#sender_username").text(),
+                    username: currentUser,
                     text: message
                 }
             });
@@ -62,7 +124,7 @@ $(document).ready(function () {
         }
     });
 
-    // Also send a message when the user hits the enter button in the text area.
+    // Send a message when the user hits the enter button in the text area.
     messageContent.bind('keydown', function (event) {
         if ((event.keyCode || event.charCode) !== 13)
             return true;
@@ -70,12 +132,42 @@ $(document).ready(function () {
         return false;
     });
 
-
     // Subscribe to messages coming in from the channel.
     pubnub.subscribe({
-        channel: $("#sender_username").text(),
-        message: handleMessage
+        backfill: isHistoryEnabled,
+        channel: chanelsArr,
+        message: handleMessage,
+     
     });
 
+    //function getHistory() {
+    //    pubnub.history({
+    //        channel: $("#sender_username").text(),
+    //        limit: 15,
+    //        callback: function (notifications) {
+    //            console.log(notifications);
+    //        }
+    //    });
+    //}
+    //function hereNow() {
+    //    PUBNUB.here_now({
+    //        channel: $("#sender_username").text(),
+    //        callback: function (message) { console.log(message) }
+    //    });
+    //}
+    //var historyArr = [];
+    //pubnub.history({
+    //    limit: 15,
+    //    channel: $("#recever_username").text(),
+    //    callback: function (message) {
+    //        historyArr = message;
+    //        console.log('message :');
+    //        console.log(message);
+    //    }
+    //});
+    //$("#get").click(
+    //    function getHistory() {
+    //        console.log('getHistory : ');
+    //        console.log(historyArr);
+    //    })
 });
-
