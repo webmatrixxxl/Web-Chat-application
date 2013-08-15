@@ -68,7 +68,6 @@ $(document).ready(function () {
         });
 
         var newUser = event.currentTarget.id;
-
         $("#receiver_username").text(newUser);
         receiverUser = newUser;
         chanelsArr = [currentUser, receiverUser];
