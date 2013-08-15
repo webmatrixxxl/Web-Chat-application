@@ -13,13 +13,13 @@ $(document).ready(function () {
     messageList = $('#conversation');
 
     var currentUser = $("#sender_username").text();
-    var receverUser = $("#recever_username").text();
-    var chanelsArr = [currentUser, receverUser];
+    var receiverUser = $("#receiver_username").text();
+    var chanelsArr = [currentUser, receiverUser];
     var showHistoryBtn = $("#showHistory"); // to do: add element with id="showHistory"
     var addChanel = $("#addChanel"); // to do: add element with id="addChanel"
     var removeChanel = $("#removeChanel"); // to do: add element with id="removeChanel"
     var closeAll = $("#closeAll"); // to do: add element with id="closeAll"
-    var changeChatMate = $("#changeChatMate"); // to do: add element with id="changeChatMate"
+    var changeChatMate = $(".chatMate"); // to do: add element with class="chatMate"
     var isHistoryEnabled = false;
 
     showHistoryBtn.click(function () {
@@ -34,7 +34,7 @@ $(document).ready(function () {
     });
 
     addChanel.click(function (newChanel) {
-       var newChanel = a
+
         if (chanelsArr.indexOf(newChanel) >= 0) {
             chanelsArr.push(newChanel)
         }
@@ -61,13 +61,17 @@ $(document).ready(function () {
         chanelsArr = [];
     });
 
-    changeChatMate.click(function (newUser) {
+
+    changeChatMate.click(function (event) {
         pubnub.unsubscribe({
             channel: chanelsArr
         });
-        $("#recever_username").text(newUser);
-        receverUser = newUser;
-        chanelsArr = [currentUser, receverUser];
+
+        var newUser = event.currentTarget.id;
+
+        $("#receiver_username").text(newUser);
+        receiverUser = newUser;
+        chanelsArr = [currentUser, receiverUser];
 
         pubnub.subscribe({
             backfill: isHistoryEnabled,
@@ -112,7 +116,7 @@ $(document).ready(function () {
 
         if (message != '') {
             pubnub.publish({
-                channel: receverUser,
+                channel: receiverUser,
                 message: {
                     username: currentUser,
                     text: message
@@ -158,7 +162,7 @@ $(document).ready(function () {
     //var historyArr = [];
     //pubnub.history({
     //    limit: 15,
-    //    channel: $("#recever_username").text(),
+    //    channel: $("#receiver_username").text(),
     //    callback: function (message) {
     //        historyArr = message;
     //        console.log('message :');
