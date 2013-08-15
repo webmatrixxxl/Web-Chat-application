@@ -13,10 +13,85 @@
     <link rel="stylesheet" href="css/foundation.css">
     <link href="css/iPhoneStyle.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+    <script src="js/persisters.js"></script>
+    <script src="js/cryptojs-sha1.js"></script>
+
+
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="js/vendor/custom.modernizr.js"></script>
     <script src="js/script.js"></script>
 
     <script src="http://cdn.pubnub.com/pubnub-3.5.3.min.js"></script>
+<!--    <script>
+        $(document).ready(function () {
+            $("footer").click(function () {
+                $("section").slideDown(1000);
+                $("footer").slideUp(2000)
+
+            });
+        });
+    </script>-->
+
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        section {
+            display: none;
+        }
+
+
+        footer form {
+            display: inline-block;
+            background: #212121;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            height: 100%;
+            width: 100%;
+            background: -moz-radial-gradient(50% 46% 90deg,circle closest-corner, #242424, #090909);
+            background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, from(#242424), to(#090909));
+            -webkit-box-shadow: 0px 0px 1px 1px #444;
+            -moz-box-shadow: 0px 0px 1px 1px #444;
+            box-shadow: 0px 0px 1px 1px #444;
+        }
+
+            footer form label {
+                display: block;
+                padding: 10px 10px 5px 15px;
+                font-size: 11px;
+                color: #777;
+            }
+
+            footer form input {
+                display: block;
+                margin: 5px 10px 10px 15px;
+                width: 85%;
+                background: #111;
+                -moz-box-shadow: 0px 0px 4px #000 inset;
+                -webkit-box-shadow: 0px 0px 4px #000 inset;
+                box-shadow: 0px 0px 4px #000 inset;
+                border: 1px solid #000;
+                padding: 5px;
+                color: #444;
+                font-size: 16px;
+            }
+
+                footer form input:focus {
+                    outline: 1px solid #555;
+                    transition: 200ms linear;
+                    color: #FFF;
+                }
+
+
+                footer form input[type=submit] {
+                    margin-right: 20px;
+                }
+    </style>
 </head>
 <body>
 
@@ -144,8 +219,7 @@
                 <div id="iPhoneBro" class="iPhone gen">
 
                     <ul data-role="listview" id="conversation" class="conversation ">
-                        <li class="time" style="">
-                        </li>
+                        <li class="time" style=""></li>
                         <li class="text sent" style="">
                             <div class="reflect"></div>
                             <p>
@@ -166,11 +240,11 @@
 
                 </div>
                 <div class="message">
-                    <input  id="messageContent" type="text" name="message" value="" placeholder="Text Message">
-                    
+                    <input id="messageContent" type="text" name="message" value="" placeholder="Text Message">
+
                     <!--<input id="sendMessageButton" data-role="button"  type="submit" value="Send" onclick="sendSMS();" class="disabled">-->
-                    <input id="sendMessageButton" data-role="button"  type="submit" value="Send" class="disabled">
-           <!--         <input id="phone" type="hidden" name="number" value="">-->
+                    <input id="sendMessageButton" data-role="button" type="submit" value="Send" class="disabled">
+                    <!--         <input id="phone" type="hidden" name="number" value="">-->
                 </div>
             </div>
 
@@ -181,8 +255,36 @@
 
 
 
-    <footer>
+    <footer class="toggler">
         <div class="row">
+            <form>
+                <label for="username">User name</label>
+                <input type="text" placeholder="Username" name="username">
+                <label for="pass">Password</label>
+                <input type="password" placeholder="Password" name="pass">
+
+                <a href="#" class=" button two small right">Signe in</a>
+
+                <input class="button two small right" type="submit" value="LOG IN">
+            </form>
+
+            <form>
+                <label for="username">User name</label>
+                <input type="text" placeholder="Username" name="username">
+                <label for="pass">Password</label>
+                <input type="password" placeholder="Password" name="pass">
+                <label for="repass">Repeate Password</label>
+                <input type="password" placeholder="Password" name="repass">
+                <label for="email">Email</label>
+                <input type="email" placeholder="Email" name="email">
+                <label for="img">Repeate Password</label>
+                <input class="button" type="file" name="img">
+
+
+                <a href="#" class=" button two small right">Signe in</a>
+
+                <input class="button two small right" type="submit" value="LOG IN">
+            </form>
         </div>
     </footer>
 

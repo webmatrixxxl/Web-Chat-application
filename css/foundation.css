@@ -2208,6 +2208,7 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
+input[type="file"],
 textarea {
     background-color: white;
     font-family: inherit;
@@ -2241,6 +2242,7 @@ textarea {
     input[type="search"]:focus,
     input[type="tel"]:focus,
     input[type="time"]:focus,
+    input[type="file"],
     input[type="url"]:focus,
     textarea:focus {
         -webkit-box-shadow: 0 0 5px #999999;
@@ -2262,6 +2264,7 @@ textarea {
     input[type="tel"]:focus,
     input[type="time"]:focus,
     input[type="url"]:focus,
+    input[type="file"]:focus,
     textarea:focus {
         background: #fafafa;
         border-color: #999999;
@@ -2281,6 +2284,7 @@ textarea {
     input[type="tel"][disabled],
     input[type="time"][disabled],
     input[type="url"][disabled],
+    input[type="file"][disabled],
     textarea[disabled] {
         background-color: #dddddd;
     }
