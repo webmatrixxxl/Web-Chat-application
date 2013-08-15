@@ -1,0 +1,22 @@
+﻿
+
+#contacts .row {
+    transition: background-color 1000ms linear;
+}
+#contacts .row:hover {
+    background-color:#bce3ff;
+}
+#contacts .row{
+    background-color:#fff;
+}
+
+
+#iPhoneBro, #contacts {
+    max-height:468px;
+    overflow:auto;
+}
+
+footer {
+background: none repeat scroll 0 0 #333333;
+    padding: 24px 0 10px;
+}
