@@ -22,13 +22,24 @@ $(document).ready(function () {
     var changeChatMate = $(".chatMate"); // to do: add element with class="chatMate"
     var isHistoryEnabled = false;
 
-    showHistoryBtn.click(function () {
-        if (showHistoryBtn.text() === "Show History") {
+    showHistoryBtn.click(function (event) {
+        if (event.currentTarget.checked) {
             isHistoryEnabled = true;
+
         }
         else {
             isHistoryEnabled = false;
         }
+        pubnub.unsubscribe({
+            channel: chanelsArr
+        });
+        messageList.html('');
+        pubnub.subscribe({
+            backfill: isHistoryEnabled,
+            channel: chanelsArr,
+            message: handleMessage,
+
+        });
 
         return this;
     });
@@ -71,7 +82,7 @@ $(document).ready(function () {
         $("#receiver_username").text(newUser);
         receiverUser = newUser;
         chanelsArr = [currentUser, receiverUser];
-
+        messageList.html('');
         pubnub.subscribe({
             backfill: isHistoryEnabled,
             channel: chanelsArr,
@@ -122,7 +133,7 @@ $(document).ready(function () {
                 }
             });
 
-            printMyMessage(message);
+            
             messageContent.val("");
         }
     });
