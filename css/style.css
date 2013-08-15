@@ -1,22 +1,39 @@
 ﻿
 
 #contacts .row {
-    transition: background-color 1000ms linear;
+    transition: background-color 800ms linear;
 }
-#contacts .row:hover {
-    background-color:#bce3ff;
+
+    #contacts .row:hover {
+        background-color: #bce3ff;
+    }
+
+#contacts .row {
+    background-color: #fff;
 }
-#contacts .row{
-    background-color:#fff;
+
+#contacts h6 {
+    color: #808080;
+    font-size: small;
 }
+
+    #contacts h6 span {
+        display: none;
+    }
+
+#contacts .row:hover h6 span {
+    display: inline-block;
+}
+
+
 
 
 #iPhoneBro, #contacts {
-    max-height:468px;
-    overflow:auto;
+    max-height: 468px;
+    overflow: auto;
 }
 
 footer {
-background: none repeat scroll 0 0 #333333;
+    background: none repeat scroll 0 0 #333333;
     padding: 24px 0 10px;
 }

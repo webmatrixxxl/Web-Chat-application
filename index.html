@@ -8,12 +8,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Web Chat application</title>
+
     <link href="css/presentation.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/foundation.css">
-    <script src="js/vendor/custom.modernizr.js"></script>
-    <script src="js/script.js"></script>
     <link href="css/iPhoneStyle.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+    <script src="js/vendor/custom.modernizr.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="http://cdn.pubnub.com/pubnub-3.5.3.min.js"></script>
+
 </head>
 <body>
 
@@ -55,7 +59,7 @@
                 </div>
                 <div class="eight phone-three columns">
                     <p>
-                        <a href="#">My Username</a><br>
+                        <a href="#" id="sender_username">My Username</a><br>
                         Some text here
                     </p>
                 </div>
@@ -65,7 +69,7 @@
 
                 <div class="eight phone-three columns" style="text-align: right;">
                     <p>
-                        <a href="#">Contact Username</a><br>
+                        <a href="#" id="recever_username">Contact Username</a><br>
                         Some text here
                     </p>
                 </div>
@@ -94,6 +98,7 @@
                     <div class="ten phone-three columns">
                         <h5 class="right">85</h5>
                         <h4><a href="#">Pe6o</a></h4>
+                        <h6 class="right"><a href="#"><span>Add to chat</span> +</a></h6>
                         <p>I'm in good mood :)</p>
                     </div>
                 </div>
@@ -105,6 +110,7 @@
                     <div class="ten phone-three columns">
                         <h5 class="right">52</h5>
                         <h4><a href="#">Pong Hong</a></h4>
+                        <h6 class="right"><a href="#"><span>Add to chat</span> +</a></h6>
                         <p>Call me...</p>
                     </div>
                 </div>
@@ -116,6 +122,7 @@
                     <div class="ten phone-three columns">
                         <h5 class="right">35</h5>
                         <h4><a href="#">Theodore Roosevelt</a></h4>
+                        <h6 class="right"><a href="#"><span>Add to chat</span> +</a></h6>
                         <p>Cry my a river!</p>
                     </div>
                 </div>
@@ -137,31 +144,32 @@
                 </div>
                 <div id="iPhoneBro" class="iPhone gen">
 
-                    <div id="conversation" class="conversation ">
-                        <div class="clear"></div>
-                        <div class="time" style="">
-                        </div>
-                        <div class="text sent" style="">
+                    <ul data-role="listview" id="conversation" class="conversation ">
+                        <li class="time" style="">
+                        </li>
+                        <li class="text sent" style="">
                             <div class="reflect"></div>
                             <p>
                                 <strong><a href="#">Me</a> said:</strong>
                                 Not sure if trolling, or just stupid #fry
                                     
                             </p>
-                        </div>
-                        <div class="text receive" style="">
+                        </li>
+                        <li class="text receive" style="">
                             <div class="reflect"></div>
                             <p>
                                 <strong><a href="#" id="sender">Pe6o</a> said:</strong>
                                 Stay cool man :P
                                     <br />
                             </p>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
 
                 </div>
                 <div class="message">
-                    <input id="imessage" type="text" name="imessage" value="" placeholder="Text Message"><input id="send_btn" type="submit" value="Send" onclick="sendSMS();" class="disabled"><input id="phone" type="hidden" name="number" value="">
+                    <input  id="imessage" type="text" name="imessage" value="" placeholder="Text Message">
+                    <input id="sendMessageButton" data-role="button"  type="submit" value="Send" onclick="sendSMS();" class="disabled">
+                    <input id="phone" type="hidden" name="number" value="">
                 </div>
             </div>
 
@@ -169,14 +177,11 @@
 
     </section>
 
-    
+
 
 
     <footer>
         <div class="row">
-            
-           
-
         </div>
     </footer>
 
@@ -184,7 +189,7 @@
         document.write('<script src=' +
         ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
         '.js><\/script>')
-  </script>
+    </script>
 
     <script src="js/foundation.min.js"></script>
     <!--
@@ -225,6 +230,6 @@
 
     <script>
         $(document).foundation();
-  </script>
+    </script>
 </body>
 </html>

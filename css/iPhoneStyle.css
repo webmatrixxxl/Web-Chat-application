@@ -54,6 +54,7 @@
         background: -moz-linear-gradient(90deg, #b6e74d 0%, #8fd13e 25.6%, #8acf43 79.9%, #4ab947 100%) #8fd13e;
         background: -webkit-gradient(linear, left bottom, left top, from(#b6e74d), color-stop(0.256, #8fd13e), color-stop(0.799, #8acf43), to(#4ab947)) #8fd13e;
         margin-left: 140px;
+        list-style:none;
     }
 
     .iPhone .text.receive {
@@ -62,6 +63,8 @@
         background-image: -webkit-gradient(linear, left bottom, left top, from(#e1e1e1), to(#e0e0e0));
         background-image: -moz-linear-gradient(90deg, #e1e1e1 0%, #e0e0e0 100%);
         margin-right: 116px;
+        list-style:none;
+
     }
 
 
