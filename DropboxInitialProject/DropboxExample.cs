@@ -36,14 +36,14 @@ class DropboxExample
         Console.WriteLine("Hi " + profile.DisplayName + "!");
 
         // Create new folder
-        string newFolderName = "New_Folder_" + DateTime.Now.Ticks;
+        string newFolderName = "images";
         Entry createFolderEntry = dropbox.CreateFolderAsync(newFolderName).Result;
         Console.WriteLine("Created folder: {0}", createFolderEntry.Path);
 
         // Upload a file
         Entry uploadFileEntry = dropbox.UploadFileAsync(
-            new FileResource("../../DropboxExample.cs"),
-            "/" + newFolderName + "/DropboxExample.cs").Result;
+            new FileResource("../../adventure_time_1366x768_27842.jpg"),
+            "/" + newFolderName + "/adventure_time_1366x768_27842.jpg").Result;
         Console.WriteLine("Uploaded a file: {0}", uploadFileEntry.Path);
 
         // Share a file
